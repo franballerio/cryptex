@@ -1,0 +1,7 @@
+09/94 - CRYPTEX TASKS
+
+BACKEND: 
+  > fix join groups
+  > en vez de guardar todos los datos de usuario en socket, crear un objeto usuario y asignarlo a socket.user
+  > terminar de aplicar DI en todos los componentes
+  > 

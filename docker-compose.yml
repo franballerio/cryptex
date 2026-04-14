@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    image: node:20-alpine
+    container_name: cryptex_b
+    working_dir: /app
+    volumes:
+      - ./back:/app
+      # Exclude node_modules from volume mounting to use container's modules
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm run dev"
+    environment:
+      - NODE_ENV=development
+      # You can link to your existing db/infra services if they share a network
+      - APP_PORT=3000
+    # networks:
+    #  - echo-knight-network # Uncomment if you want to connect to the infra db network
+
+  frontend:
+    image: node:20-alpine
+    container_name: cryptex_f
+    working_dir: /app
+    volumes:
+      - ./front:/app
+      # Exclude node_modules from volume mounting to use container's modules
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm run dev"
+    environment:
+      - NODE_ENV=development
+      - API_URL=http://backend:3000
+      - APP_PORT=5173
+      - VITE_SOCKET_URL=http://localhost:3000 
+
+# networks:
+#   echo-knight-network:
+#     external: true
