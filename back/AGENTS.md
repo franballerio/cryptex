@@ -1,6 +1,6 @@
-# AGENTS.md - Echo Knight Backend (cryptex) Development Guide
+# AGENTS.md - Cryptex Backend Development Guide
 
-This file provides high-signal context and repo-specific conventions for autonomous agents working in the `back/` directory of the Echo Knight project.
+This file provides high-signal context and repo-specific conventions for autonomous agents working in the `back/` directory of the Cryptex project.
 
 ## Architecture & Stack
 - **Framework:** Node.js + Express.js + Socket.io. (Do NOT assume Fastify).

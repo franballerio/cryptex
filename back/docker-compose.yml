@@ -6,7 +6,7 @@ services:
   # ============================================
   postgres:
     image: postgres:16-alpine
-    container_name: echo-knight-postgres
+    container_name: cryptex-postgres
     restart: unless-stopped
     environment:
       POSTGRES_USER: echoknight
@@ -27,7 +27,7 @@ services:
   # ============================================
   rabbitmq:
     image: rabbitmq:3-management-alpine
-    container_name: echo-knight-rabbitmq
+    container_name: cryptex-rabbitmq
     restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: echoknight
@@ -49,7 +49,7 @@ services:
   # ============================================
   redis:
     image: redis:7-alpine
-    container_name: echo-knight-redis
+    container_name: cryptex-redis
     restart: unless-stopped
     command: redis-server --requirepass echoknight_secure_pass
     ports:
@@ -67,7 +67,7 @@ services:
   # ============================================
   minio:
     image: minio/minio:latest
-    container_name: echo-knight-minio
+    container_name: cryptex-minio
     restart: unless-stopped
     environment:
       MINIO_ROOT_USER: echoknight
@@ -89,7 +89,7 @@ services:
   # ============================================
   adminer:
     image: adminer:4.8.1
-    container_name: echo-knight-adminer
+    container_name: cryptex-adminer
     restart: unless-stopped
     ports:
       - "8080:8080"
@@ -110,4 +110,4 @@ volumes:
 # ============================================
 networks:
   default:
-    name: echo-knight-network
+    name: cryptex-network

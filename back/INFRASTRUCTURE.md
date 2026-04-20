@@ -44,13 +44,13 @@ Or via the Console (http://localhost:9001):
 
 ```bash
 # PostgreSQL
-docker exec echo-knight-postgres pg_isready -U echoknight
+docker exec cryptex-postgres pg_isready -U echoknight
 
 # RabbitMQ
-docker exec echo-knight-rabbitmq rabbitmq-diagnostics check_running
+docker exec cryptex-rabbitmq rabbitmq-diagnostics check_running
 
 # Redis
-docker exec echo-knight-redis redis-cli -a echoknight_secure_pass ping
+docker exec cryptex-redis redis-cli -a echoknight_secure_pass ping
 
 # MinIO
 curl http://localhost:9000/minio/health/live

@@ -1,4 +1,4 @@
-# 🔧 Echo Knight Backend - Fix Plan
+# 🔧 Cryptex Backend - Fix Plan
 
 **Date:** April 8, 2026  
 **Status:** Ready for Implementation  
