@@ -1,4 +1,4 @@
-# Echo Knight Frontend (cryptex_front)
+# Cryptex Frontend (cryptex_front)
 
 This file contains high-signal context and repo-specific conventions for autonomous agents working in this repository.
 
